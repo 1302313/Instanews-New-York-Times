@@ -1,0 +1,103 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	color: whitesmoke;
+	background-color: black;
+	height: 100vh;
+}
+
+body,
+button,
+input {
+	font-size: 0.8rem;
+	/* Default Font - Open Sans Light */
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.container {
+	/* Cell Design */
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1250px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.site-header {
+	/* Cell Alignment */
+	align-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.logo {
+	display: block;
+	width: 25%;
+}
+
+.site-form {
+	display: block;
+	width: 25%;
+}
+
+.site-form input {
+	background-color: transparent;
+	color: whitesmoke;
+	width: 100%;
+}
+
+.site-form input,
+.site-form select {
+	font-size: 1rem;
+	font-size: 1rem;
+}
+
+.site-form-content {
+	text-align: center;
+	width: 100%;
+}
+
+.site-footer {
+	/* Cell Design */
+	margin-bottom: 3rem;
+	padding: 1rem;
+	/* Text Alignment, Color and Size */
+	color: #c2c2c2;
+	font-size: 1rem;
+	text-align: center;
+}
+
+/* Change at 600px for Tablet Version and 1250px for Full screen */
+/* @media (min-width: 600px) {
+	body,
+	button,
+	input {
+	}
+} */
+
+/* @media (min-width: 1250px) {
+	body,
+	button,
+	input {
+	}
+} */
+
+/* @media (min-width: 600px) {
+	.site-footer {
+	}
+} */
+
+/* @media (min-width: 1250px) {
+	.site-footer {
+	}
+} */
