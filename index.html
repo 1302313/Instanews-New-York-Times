@@ -8,16 +8,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<!-- Typography/Icons-->
-		<link rel="stylesheet" href="fonts/stylesheet.css" />
+		<link rel="stylesheet" href="/assets/fonts/stylesheet.css" />
 		<link
 			rel="stylesheet"
 			href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 			integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 			crossorigin="anonymous"
 		/>
-		<!-- CSS Files -->
-		<!--Eric Meyer CSS Reset Link Included-->
-		<link rel="stylesheet" href="build/css/style.min.css" />
+		<!--Eric Meyer CSS Reset Link -->
+		<link rel="stylesheet" href="/build/css/reset.min.css" />
+		<!--SelectDropdown CSS Link -->
+		<link rel="stylesheet" href="./lib/prettydropdowns.css" />
+		<!--Main CSS Link -->
+		<link rel="stylesheet" href="/build/css/style.min.css" />
 	</head>
 	<!-- Visible on Webpage -->
 	<body>
@@ -26,7 +29,7 @@
 			<!-- Section 1 - Site Header -->
 			<header class="site-header">
 				<!-- Logo: Left Side -->
-				<img class="logo" src="images/nyt-logo.svg" alt="NY-Times Logo" />
+				<img class="logo" src="/assets/images/nyt-logo.svg" alt="NY-Times Logo" />
 				<!-- Selection Form: Right Side -->
 				<form class="site-form" method="post">
 					<div class="site-form-content">
@@ -43,7 +46,11 @@
 					</div>
 				</form>
 			</header>
-			<!-- Section 2 - Main Content -->
+			<!-- Section 2A - Loading... -->
+			<div class="loading">
+				<img class="loading-gif" src="/assets/images/ajax-loader.gif" alt="Loading...">
+			</div>
+			<!-- Section 2B - Main Content -->
 			<div>
 				<section class="stories"></section>
 			</div>
@@ -60,7 +67,9 @@
 		<!-- End of Visible Content -->
 		<!--JQuery Reference Link-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+
+		<script src="./lib/jquery.prettydropdowns.js"></script>
 		<script src="build/js/main.min.js"></script>
 	</body>
 </html>

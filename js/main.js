@@ -1,6 +1,10 @@
 // Add JQuery Ready Wrap
 $(document).ready(function() {
-	// Define or choose value to change
+	// 'Select' dropdown style
+
+	$('#article-select').prettyDropdown({});
+
+	// 'Select' Value on Change
 	$('#article-select').on('change', function() {
 		const selected = $(this).val();
 		if (selected !== '') {
@@ -10,36 +14,44 @@ $(document).ready(function() {
 		}
 	});
 
+	// Query on Selection
 	function loadAjax(selected) {
-        // console.log(selected);
-        const $body = $('body');
-        const $
+		const $body = $('body');
+		const $siteHeader = $('.siteHeader');
+		// const $
 		$.ajax({
 			method: 'get',
-			// Add Variable Value selected
+			dataType: 'JSON',
 			url:
 				'https://api.nytimes.com/svc/topstories/v2/' +
 				selected +
 				'.json?api-key=9OfuvmOA7HptDqMvq03iw3MsZVXAInAT',
 		})
 			.done(function(data) {
-				console.log('mydata', data.results);
-				// const results = data.results;
-				// append your data
+				// console.log('mydata', data.results);
+				const results = data.results;
+
+				// $.each(results, function(index, value) {
+				// 	console.log(value);
+				// });
+
+				// $(selector).append(content);
+
 				// try template strings
+
 				// $.each(results, function(index, value){'<div><p>${abstract}<div>`})
 				//
 			})
 			.fail(function() {
-                $body.empty();
-                $body.append("<p></p>");
-            })
+				// $body.empty();
+				// $body.append('<p></p>');
+			})
 			.always(function() {
-                $("").hide();
-                console.log("string");
-            });
+				// $('').hide();
+				// console.log('');
+			});
 	}
-}); // good!
+}); // End of Ready - Good!
 
 // Results Array
 // Text first
