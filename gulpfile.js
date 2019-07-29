@@ -10,6 +10,7 @@ const gulp = require('gulp'),
 
 gulp.task('watch', function() {
 	gulp.watch('js/*.js', gulp.series('scripts'));
+	gulp.watch('sass/**/*.scss', gulp.series('sass'));
 	// gulp.watch('css/*.css', gulp.series('styles'));
 	gulp.watch('*.html').on('change', browserSync.reload);
 });
@@ -47,18 +48,24 @@ gulp.task(
 // });
 
 gulp.task('sass', function() {
-	return gulp
-		.src('./sass/style.scss')
-		.pipe(sass())
-		.pipe(
-			autoprefixer({
-				browsers: ['last 2 versions'],
-			})
-		)
-		.pipe(gulp.dest('./build/css'))
-		.pipe(cssnano())
-		.pipe(rename('style.min.css'))
-		.pipe(gulp.dest('./build/css'));
+	return (
+		gulp
+			.src('./sass/style.scss')
+			// Pipe in: .scss .sass
+			.pipe(sass())
+			.pipe(prettyError())
+			.pipe(
+				autoprefixer({
+					browsers: ['last 2 versions'],
+				})
+			)
+			// Build a .css
+			.pipe(gulp.dest('./build/css'))
+			// Minify .css
+			.pipe(cssnano())
+			.pipe(rename('style.min.css'))
+			.pipe(gulp.dest('./build/css'))
+	);
 });
 
 gulp.task('browser-sync', function() {

@@ -1,7 +1,13 @@
 // Add JQuery Ready Wrap
 $(document).ready(function() {
-	// 'Select' dropdown style
+	// Variables
+	const $body = $('body');
+	const $siteHeader = $('.siteHeader');
+	const $siteForm = $('.site-form');
+	const $loadingBar = $('.loading');
+	const $loadingGif = $('.loading-gif');
 
+	// 'Select' dropdown style
 	$('#article-select').prettyDropdown({});
 
 	// 'Select' Value on Change
@@ -16,9 +22,7 @@ $(document).ready(function() {
 
 	// Query on Selection
 	function loadAjax(selected) {
-		const $body = $('body');
-		const $siteHeader = $('.siteHeader');
-		// const $
+		// Connecting to API
 		$.ajax({
 			method: 'get',
 			dataType: 'JSON',
@@ -35,6 +39,10 @@ $(document).ready(function() {
 				// 	console.log(value);
 				// });
 
+				// $.filter(results, function(index, value) {
+				// 	console.log(value);
+				// });
+
 				// $(selector).append(content);
 
 				// try template strings
@@ -43,8 +51,10 @@ $(document).ready(function() {
 				//
 			})
 			.fail(function() {
-				// $body.empty();
-				// $body.append('<p></p>');
+				$siteForm.remove();
+				$loadingBar.show();
+				$loadingGif.empty();
+				$loadingBar.append('<h2>You have encountered an error. Please refresh the website and try again.</h2>');
 			})
 			.always(function() {
 				// $('').hide();

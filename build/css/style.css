@@ -1,0 +1,166 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../../assets/fonts/OpenSans-BoldItalic.eot");
+  src: url("../../assets/fonts/OpenSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/OpenSans-BoldItalic.woff2") format("woff2"), url("../../assets/fonts/OpenSans-BoldItalic.woff") format("woff"), url("../../assets/fonts/OpenSans-BoldItalic.ttf") format("truetype"), url("../../assets/fonts/OpenSans-BoldItalic.svg#OpenSans-BoldItalic") format("svg");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../../assets/fonts/OpenSansLight-Italic.eot");
+  src: url("../../assets/fonts/OpenSansLight-Italic.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/OpenSansLight-Italic.woff2") format("woff2"), url("../../assets/fonts/OpenSansLight-Italic.woff") format("woff"), url("../../assets/fonts/OpenSansLight-Italic.ttf") format("truetype"), url("../../assets/fonts/OpenSansLight-Italic.svg#OpenSansLight-Italic") format("svg");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../../assets/fonts/OpenSans-Light.eot");
+  src: url("../../assets/fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/OpenSans-Light.woff2") format("woff2"), url("../../assets/fonts/OpenSans-Light.woff") format("woff"), url("../../assets/fonts/OpenSans-Light.ttf") format("truetype"), url("../../assets/fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../../assets/fonts/OpenSans-Bold.eot");
+  src: url("../../assets/fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/OpenSans-Bold.woff2") format("woff2"), url("../../assets/fonts/OpenSans-Bold.woff") format("woff"), url("../../assets/fonts/çOpenSans-Bold.ttf") format("truetype"), url("../../assets/fonts/OpenSans-Bold.svg#OpenSans-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+/* Default Design */
+html {
+  font-size: 16px; }
+
+body {
+  color: #ffffff;
+  background-color: green; }
+
+body,
+button,
+input {
+  font-size: 0.8rem;
+  /* Default Font - Open Sans Light */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal; }
+
+.container {
+  /* Cell Design */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0; }
+
+/* Section 1 - Site Header Design */
+.site-header {
+  /* Cell Alignment and Design */
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  padding: 2rem; }
+
+.logo {
+  display: block;
+  min-width: 25%; }
+
+/* Section 2A - Loading Gif Design */
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.loading-gif {
+  min-width: 5%;
+  max-width: 20%; }
+
+/* Section 2B - Main Content Design */
+.site-form {
+  display: block;
+  width: 25%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  padding: 1rem; }
+
+.site-form input {
+  background-color: transparent;
+  color: whitesmoke;
+  width: 100%; }
+
+.site-form input,
+.site-form select {
+  font-size: 1rem;
+  font-size: 1rem; }
+
+.site-form-content {
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 1rem; }
+
+/* Section 3 - Site Footer Design */
+.site-footer {
+  /* Cell Alignment and Design */
+  margin-bottom: 3rem;
+  padding: 1rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+  /* Text Alignment, Color and Size */
+  color: #c2c2c2;
+  font-size: 1rem;
+  text-align: center; }
+
+/* Change at 600px for Tablet Version and 1250px for Full screen */
+/* @media (min-width: 600px) {
+	body,
+	button,
+	input {
+	}
+} */
+/* @media (min-width: 1250px) {
+	body,
+	button,
+	input {
+	}
+} */
+/* @media (min-width: 600px) {
+	.site-footer {
+	}
+} */
+/* @media (min-width: 1250px) {
+	.site-footer {
+	}
+} */
