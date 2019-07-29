@@ -7,6 +7,8 @@ $(document).ready(function() {
 	const $loadingBar = $('.loading');
 	const $loadingGif = $('.loading-gif');
 
+	// Reset
+	$loadingBar.hide();
 	// 'Select' dropdown style
 	$('#article-select').prettyDropdown({});
 
@@ -14,9 +16,13 @@ $(document).ready(function() {
 	$('#article-select').on('change', function() {
 		const selected = $(this).val();
 		if (selected !== '') {
+			$dropdown.refresh();
 			console.log('The value you picked is: ' + selected);
+			$loadingBar.show();
 			// Load Ajax function
-			loadAjax(selected);
+			if (loadAjax(selected) === true) {
+				$loadingBar.show();
+			}
 		}
 	});
 
@@ -32,7 +38,7 @@ $(document).ready(function() {
 				'.json?api-key=9OfuvmOA7HptDqMvq03iw3MsZVXAInAT',
 		})
 			.done(function(data) {
-				// console.log('mydata', data.results);
+				console.log('mydata', data.results);
 				const results = data.results;
 
 				// $.each(results, function(index, value) {
@@ -53,9 +59,10 @@ $(document).ready(function() {
 			.fail(function() {
 				$siteForm.remove();
 				$loadingBar.show();
-				$loadingGif.empty();
+				$loadingGif.remove();
 				$loadingBar.append('<h2>You have encountered an error. Please refresh the website and try again.</h2>');
 			})
+
 			.always(function() {
 				// $('').hide();
 				// console.log('');
