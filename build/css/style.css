@@ -139,12 +139,12 @@ input {
   display: grid; }
   .stories a {
     height: 100%;
-    color: #2d2d2d; }
+    color: whitesmoke; }
 
 .newStory {
   height: 200px;
   width: 100%;
-  color: #2d2d2d; }
+  color: whitesmoke; }
 
 /* Section 3 - Site Footer Design */
 .site-footer {
@@ -164,10 +164,7 @@ input {
 
 /* Change at 600px for Tablet Version and 1250px for Full screen */
 /* @media (min-width: 600px) {
-	body,
-	button,
-	input {
-	}
+	
 } */
 /* @media (min-width: 1250px) {
 	body,

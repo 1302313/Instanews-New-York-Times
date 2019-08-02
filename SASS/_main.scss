@@ -94,7 +94,8 @@ input {
 /* Section 2B - Main Content Design */
 .stories {
     min-height: 5rem;
-    display: grid;
+	display: grid;
+
 
     a {
         height: 100%;
@@ -106,8 +107,9 @@ input {
     height: 200px;
     width: 100%;
     color: $text-color-story;
-
 }
+
+// .article-abstract {}
 
 /* Section 3 - Site Footer Design */
 
@@ -138,10 +140,7 @@ input {
 
 /* Change at 600px for Tablet Version and 1250px for Full screen */
 /* @media (min-width: 600px) {
-	body,
-	button,
-	input {
-	}
+	
 } */
 
 /* @media (min-width: 1250px) {
