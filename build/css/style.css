@@ -33,7 +33,7 @@ html {
 
 body {
   color: #ffffff;
-  background-color: lightblue; }
+  background-color: #ade6b2; }
 
 body,
 button,
@@ -82,25 +82,6 @@ input {
   display: block;
   min-width: 25%; }
 
-/* Section 2A - Loading Gif Design */
-.loading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  max-height: 7.5%;
-  max-width: 7.5%;
-  min-height: 5%;
-  min-width: 5%;
-  margin: 0 auto; }
-
-.loading-gif {
-  min-width: 100%;
-  max-width: 100%; }
-
-/* Section 2B - Main Content Design */
 .site-form {
   display: block;
   width: 100%;
@@ -133,6 +114,38 @@ input {
   width: 100%;
   margin-top: 1rem; }
 
+/* Section 2A - Loading Bar Design */
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 10%;
+  max-width: 10%;
+  min-height: 5%;
+  min-width: 5%;
+  margin: 0 auto; }
+
+.loading-gif {
+  min-width: 100%;
+  max-width: 100%;
+  display: none; }
+
+/* Section 2B - Main Content Design */
+.stories {
+  min-height: 5rem;
+  display: grid; }
+  .stories a {
+    height: 100%;
+    color: #2d2d2d; }
+
+.newStory {
+  height: 200px;
+  width: 100%;
+  color: #2d2d2d; }
+
 /* Section 3 - Site Footer Design */
 .site-footer {
   margin: 1rem;
@@ -142,16 +155,11 @@ input {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  color: red;
+  color: #c2c2c2;
   font-size: 1rem;
   text-align: center; }
 
-.site-footer p {
-  margin: 0.5rem; }
-  .site-footer p:hover {
-    text-transform: uppercase; }
-
-#red-footer {
+.red-footer {
   margin-top: 1.5rem; }
 
 /* Change at 600px for Tablet Version and 1250px for Full screen */

@@ -1,0 +1,43 @@
+// @mixin flexed(
+//   $wrap: no-wrap, 
+//   $dir: row,
+//   $justify: center,
+//   $align: center
+//   ){
+//   display: flex;
+//   flex-wrap: $wrap;
+//   flex-direction: $dir;
+//   justify-content: $justify;
+//   align-items: $align;
+// }
+
+// .flexed-container {
+//   @include flexed(wrap, column, flex-start, flex-end);
+// }
+
+// $desktop-width: 1000px;
+
+// @mixin tablet {
+//   @media (min-width: 600px) {
+//     @content;
+//   }
+// }
+
+// @mixin desktop {
+//   @media (min-width: 1000px) {
+//     @content;
+//   }
+// }
+
+// @mixin breakpoint($width) {
+//   @media (min-width: $width) {
+//     @content;
+//   }
+// }
+
+// li {
+//    flex: 0 1 100%;
+//    @include breakpoint($desktop-width){
+//       flex: 0 1 50%;
+//    }
+// }

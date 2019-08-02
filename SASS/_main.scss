@@ -1,6 +1,6 @@
 /* Default Design */
 html {
-    font-size: 16px;
+    font-size: $default-font-size;
 }
 
 body {
@@ -37,7 +37,7 @@ input {
     flex-flow: column wrap;
     justify-content: center;
     height: 100%;
-    padding: 2rem;
+    padding: $division-padding * 2;
 }
 
 .logo {
@@ -45,30 +45,12 @@ input {
     min-width: 25%;
 }
 
-/* Section 2A - Loading Gif Design */
-.loading {
-    display: flex;
-    justify-content: center;
-    max-height: 7.5%;
-    max-width: 7.5%;
-    min-height: 5%;
-    min-width: 5%;
-    margin: 0 auto;
-}
-
-.loading-gif {
-    min-width: 100%;
-    max-width: 100%;
-
-}
-
-/* Section 2B - Main Content Design */
 .site-form {
     display: block;
     width: 100%;
     align-self: center;
     text-align: center;
-    padding: 1rem;
+    padding: $division-padding;
 }
 
 .site-form input {
@@ -92,12 +74,47 @@ input {
     margin-top: 1rem;
 }
 
+/* Section 2A - Loading Bar Design */
+.loading {
+    display: flex;
+    justify-content: center;
+    max-height: 10%;
+    max-width: 10%;
+    min-height: 5%;
+    min-width: 5%;
+    margin: 0 auto;
+}
+
+.loading-gif {
+    min-width: 100%;
+    max-width: 100%;
+    display: none;
+}
+
+/* Section 2B - Main Content Design */
+.stories {
+    min-height: 5rem;
+    display: grid;
+
+    a {
+        height: 100%;
+        color: $text-color-story;
+    }
+}
+
+.newStory {
+    height: 200px;
+    width: 100%;
+    color: $text-color-story;
+
+}
+
 /* Section 3 - Site Footer Design */
 
 .site-footer {
     // Cell Alignment and Design
     margin: 1rem;
-    padding: 1rem;
+    padding: $division-padding;
     align-self: center;
     // vertical-align: bottom;
     align-items: flex-end;
@@ -107,15 +124,15 @@ input {
     text-align: center;
 }
 
-.site-footer p {
-    margin: 0.5rem;
+// .site-footer  {
+//     margin: 0.5rem;
 
-    &:hover {
-        text-transform: uppercase;
-    }
-}
+//     &:hover {
+//         text-transform: uppercase;
+//     }
+// }
 
-#red-footer {
+.red-footer {
     margin-top: 1.5rem;
 }
 

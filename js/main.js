@@ -1,28 +1,31 @@
 // Add JQuery Ready Wrap
 $(document).ready(function() {
 	// Variables
-	const $body = $('body');
-	const $siteHeader = $('.siteHeader');
-	const $siteForm = $('.site-form');
+	// const $siteHeader = $('.siteHeader');
+	// const $siteForm = $('.site-form');
 	const $loadingBar = $('.loading');
 	const $loadingGif = $('.loading-gif');
+	const $select = $('#article-select');
+	const $stories = $('.stories');
+	let $newStory = $('newStory');
 
-	// Reset
-	$loadingBar.hide();
 	// 'Select' dropdown style
-	$('#article-select').prettyDropdown({});
+	$select.prettyDropdown({});
 
+	// $loadingBar.empty();
 	// 'Select' Value on Change
-	$('#article-select').on('change', function() {
+	$select.on('change', function(event) {
+		event.preventDefault();
 		const selected = $(this).val();
+
 		if (selected !== '') {
-			$dropdown.refresh();
 			console.log('The value you picked is: ' + selected);
-			$loadingBar.show();
+			setTimeout(() => {}, 2000);
 			// Load Ajax function
 			if (loadAjax(selected) === true) {
-				$loadingBar.show();
 			}
+
+			$loadingGif.show();
 		}
 	});
 
@@ -38,49 +41,53 @@ $(document).ready(function() {
 				'.json?api-key=9OfuvmOA7HptDqMvq03iw3MsZVXAInAT',
 		})
 			.done(function(data) {
+				$stories.empty();
 				console.log('mydata', data.results);
 				const results = data.results;
 
-				// $.each(results, function(index, value) {
-				// 	console.log(value);
-				// });
+				const filteredResults = results
+					.filter(function(value) {
+						return value.multimedia[4] !== undefined;
+					})
+					.slice(0, 12);
 
-				// $.filter(results, function(index, value) {
-				// 	console.log(value);
-				// });
+				$.each(filteredResults, function(index, article) {
+					// console.log(article);
 
-				// $(selector).append(content);
+					const articleTemplate = `
+					<div class="newStory" style="background: url(${article.multimedia[4].url}) center/cover;">
+						<a href="${article.url}" target="_blank">
+							<h2 class="article-title">${article.title}<h2>
+						</a>
+						<p class="article-abstract">${article.abstract}</p>
+					</div>
+					`;
 
-				// try template strings
+					$('.stories').append(articleTemplate);
 
-				// $.each(results, function(index, value){'<div><p>${abstract}<div>`})
-				//
+					// if (
+					// 	this.title !== undefined &&
+					// 	this.abstract !== undefined &&
+					// 	this.url !== undefined &&
+					// 	this.multimedia[0] !== undefined
+					// ) {
+					// 	$("<a class='newStory'></a>").appendTo('.stories');
+
+					// 	$newStory.css('background-image', 'url(' + this.multimedia[0].url) + ')';
+					// 	$newStory.append('<h1>' + this.title + '</h1>');
+					// }
+				});
 			})
 			.fail(function() {
-				$siteForm.remove();
 				$loadingBar.show();
 				$loadingGif.remove();
-				$loadingBar.append('<h2>You have encountered an error. Please refresh the website and try again.</h2>');
+				$('.stories').append(
+					'<h2>You have encountered an error. Please refresh the website and try again.</h2>'
+				);
 			})
 
 			.always(function() {
-				// $('').hide();
-				// console.log('');
+				$loadingGif.hide();
 			});
 	}
 }); // End of Ready - Good!
-
-// Results Array
-// Text first
-//.each titles
-
-// .filter images
-// .slice images
-
-// Content
-
-//image
-
-// description
-
-// URL
