@@ -1,18 +1,14 @@
 // Add JQuery Ready Wrap
-$(document).ready(function() {
+$(function() {
 	// Variables
-	// const $siteHeader = $('.siteHeader');
-	// const $siteForm = $('.site-form');
 	const $loadingBar = $('.loading');
 	const $loadingGif = $('.loading-gif');
 	const $select = $('#article-select');
 	const $stories = $('.stories');
-	let $newStory = $('newStory');
 
 	// 'Select' dropdown style
 	$select.prettyDropdown({});
 
-	// $loadingBar.empty();
 	// 'Select' Value on Change
 	$select.on('change', function(event) {
 		event.preventDefault();
@@ -41,44 +37,35 @@ $(document).ready(function() {
 				'.json?api-key=9OfuvmOA7HptDqMvq03iw3MsZVXAInAT',
 		})
 			.done(function(data) {
+				// Refresh Content
 				$stories.empty();
-				console.log('mydata', data.results);
+				// Select 12 stories from the results and validate
 				const results = data.results;
-
 				const filteredResults = results
 					.filter(function(value) {
 						return value.multimedia[4] !== undefined;
 					})
 					.slice(0, 12);
 
+				// For each story, append the following to the DOM
 				$.each(filteredResults, function(index, article) {
-					// console.log(article);
-
 					const articleTemplate = `
 					<div class="newStory" style="background: url(${article.multimedia[4].url}) center/cover;">
 						<a href="${article.url}" target="_blank">
 							<h2 class="article-title">${article.title}<h2>
 						</a>
-						<p class="article-abstract">${article.abstract}</p>
+						<div class="article-abstract">
+							<p>${article.abstract}</p>
+						</div>
 					</div>
 					`;
 
 					$('.stories').append(articleTemplate);
-
-					// if (
-					// 	this.title !== undefined &&
-					// 	this.abstract !== undefined &&
-					// 	this.url !== undefined &&
-					// 	this.multimedia[0] !== undefined
-					// ) {
-					// 	$("<a class='newStory'></a>").appendTo('.stories');
-
-					// 	$newStory.css('background-image', 'url(' + this.multimedia[0].url) + ')';
-					// 	$newStory.append('<h1>' + this.title + '</h1>');
-					// }
 				});
-			})
+			}) // End of Done
+
 			.fail(function() {
+				//Remove loading Gif and append an Error Message
 				$loadingBar.show();
 				$loadingGif.remove();
 				$('.stories').append(
@@ -90,4 +77,4 @@ $(document).ready(function() {
 				$loadingGif.hide();
 			});
 	}
-}); // End of Ready - Good!
+});
