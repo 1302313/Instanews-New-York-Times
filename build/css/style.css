@@ -3,10 +3,6 @@
 /* Background Color */
 /* Cell Design */
 /* Breakpoints */
-@media screen and (min-width: 600px) {
-  .stories {
-    grid-template-columns: 1fr 1fr 1fr; } }
-
 @font-face {
   font-family: 'Open Sans';
   src: url("../../assets/fonts/OpenSans-BoldItalic.eot");
@@ -66,7 +62,6 @@ input {
           justify-content: space-between;
   min-height: 100vh;
   min-width: 320px;
-  max-width: 1250px;
   padding: 0; }
 
 /* Section 1 - Site Header Design */
@@ -132,14 +127,12 @@ input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-height: 10%;
-  max-width: 10%;
-  min-height: 5%;
-  min-width: 5%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-bottom: 2rem; }
 
 .loading-gif {
-  width: 50%;
+  width: 15%;
+  height: 15%;
   display: none; }
 
 /* Section 2B - Main Content Design */

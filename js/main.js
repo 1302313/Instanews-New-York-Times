@@ -74,7 +74,7 @@ $(function() {
 			})
 
 			.always(function() {
-				$loadingGif.hide();
+				// $loadingGif.hide();
 			});
 	}
 });

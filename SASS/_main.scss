@@ -25,7 +25,7 @@ input {
     justify-content: space-between;
     min-height: 100vh;
     min-width: 320px;
-    max-width: 1250px;
+    // max-width: 1250px;
     // margin: 0;
     padding: 0;
 }
@@ -84,15 +84,17 @@ input {
 .loading {
     display: flex;
     justify-content: center;
-    max-height: 10%;
-    max-width: 10%;
-    min-height: 5%;
-    min-width: 5%;
+    // max-height: 50%;
+    // max-width: 10%;
+    // min-height: 30%;
+    // min-width: 5%;
     margin: 0 auto;
+    padding-bottom: 2rem;
 }
 
 .loading-gif {
-    width: 50%;
+    width: 15%;
+    height: 15%;
     display: none;
 }
 
