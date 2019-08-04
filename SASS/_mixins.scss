@@ -18,14 +18,20 @@
 
 
 
-// $desktop-width: 1000px;
+
+
+@media screen and (min-width: 600px) {
+    .stories {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
 
 // @mixin tablet {
 //   @media (min-width: 600px) {
-    // body,
- // button,
- // input {
- // }
+// body,
+// button,
+// input {
+// }
 
 //     @content;
 //   }

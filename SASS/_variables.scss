@@ -1,6 +1,17 @@
+$default-font-size: 16px;
+
+/* Text color */
 $text-color-main: #ffffff;
 $text-color-story: whitesmoke;
-$back-color: rgb(173, 230, 178); // change to 
 $text-color-ft: #c2c2c2;
+
+/* Background Color */
+$back-color: rgb(173, 230, 178); // change to 
+
+/* Cell Design */
 $division-padding: 1rem;
-$default-font-size: 16px;
+
+/* Breakpoints */
+$desktop-width: 1000px;
+$tablet-width: 600px;
+$mobile-width: 450px;

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/* Text color */
+/* Background Color */
+/* Cell Design */
+/* Breakpoints */
+@media screen and (min-width: 600px) {
+  .stories {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
 @font-face {
   font-family: 'Open Sans';
   src: url("../../assets/fonts/OpenSans-BoldItalic.eot");
@@ -38,8 +46,8 @@ body {
 body,
 button,
 input {
-  font-size: 0.8rem;
   /* Default Font - Open Sans Light */
+  font-size: 0.8rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-style: normal; }
@@ -57,8 +65,8 @@ input {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-height: 100vh;
+  min-width: 320px;
   max-width: 1250px;
-  margin: 0 auto;
   padding: 0; }
 
 /* Section 1 - Site Header Design */
@@ -78,13 +86,15 @@ input {
   height: 100%;
   padding: 2rem; }
 
-.logo {
-  display: block;
-  min-width: 25%; }
+.logo-container {
+  margin: 0 auto; }
+  .logo-container .logo {
+    display: block;
+    min-width: 25%; }
 
 .site-form {
   display: block;
-  width: 100%;
+  width: 75%;
   -ms-flex-item-align: center;
       align-self: center;
   text-align: center;
@@ -129,21 +139,21 @@ input {
   margin: 0 auto; }
 
 .loading-gif {
-  min-width: 100%;
-  max-width: 100%;
+  width: 50%;
   display: none; }
 
 /* Section 2B - Main Content Design */
 .stories {
   min-height: 5rem;
-  display: grid; }
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%; }
   .stories a {
     height: 100%;
     color: whitesmoke; }
 
 .newStory {
-  height: 200px;
-  width: 100%;
+  height: 500px;
   color: whitesmoke; }
 
 /* Section 3 - Site Footer Design */
