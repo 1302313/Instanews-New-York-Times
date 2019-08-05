@@ -1,0 +1,43 @@
+html {
+    font-size: $default-font-size;
+}
+
+body {
+    color: $text-color-main;
+    background-color: $back-color;
+}
+
+body,
+button,
+input {
+    /* Default Font - Open Sans Light */
+    font-size: 0.8rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.container {
+    /* Cell Design */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 320px;
+    max-width: 3200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.screen-reader {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

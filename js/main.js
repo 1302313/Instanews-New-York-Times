@@ -3,23 +3,26 @@ $(function() {
 	// Variables
 	const $loadingBar = $('.loading');
 	const $loadingGif = $('.loading-gif');
-	const $select = $('#article-select');
 	const $stories = $('.stories');
+	const $select = $('#article-select');
 
 	// 'Select' dropdown style
 	$select.prettyDropdown({});
 
 	// 'Select' Value on Change
+
 	$select.on('change', function(event) {
 		event.preventDefault();
 		const selected = $(this).val();
 
 		if (selected !== '') {
 			console.log('The value you picked is: ' + selected);
-			setTimeout(() => {}, 2000);
+
 			// Load Ajax function
 			if (loadAjax(selected) === true) {
+				return selected;
 			}
+			// To show loading bar for 2 seconds
 
 			$loadingGif.show();
 		}
@@ -46,7 +49,7 @@ $(function() {
 						return value.multimedia[4] !== undefined;
 					})
 					.slice(0, 12);
-
+				console.log(filteredResults);
 				// For each story, append the following to the DOM
 				$.each(filteredResults, function(index, article) {
 					const articleTemplate = `
@@ -74,7 +77,7 @@ $(function() {
 			})
 
 			.always(function() {
-				// $loadingGif.hide();
+				$loadingGif.hide();
 			});
 	}
 });

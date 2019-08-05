@@ -3,6 +3,7 @@
   min-width: 72px;
   /* 70px + borders */
   display: inline-block;
+  margin-top: 0.5rem;
 }
 
 .prettydropdown.loading {

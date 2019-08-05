@@ -1,35 +1,4 @@
 /* Default Design */
-html {
-    font-size: $default-font-size;
-}
-
-body {
-    color: $text-color-main;
-    background-color: $back-color;
-}
-
-body,
-button,
-input {
-    /* Default Font - Open Sans Light */
-    font-size: 0.8rem;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-.container {
-    /* Cell Design */
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    min-height: 100vh;
-    min-width: 320px;
-    // max-width: 1250px;
-    // margin: 0;
-    padding: 0;
-}
-
 /* Section 1 - Site Header Design */
 .site-header {
     // Cell Alignment and Design
@@ -39,6 +8,7 @@ input {
     justify-content: center;
     height: 100%;
     padding: $division-padding * 2;
+    // align-self: center;
 }
 
 .logo-container {
@@ -50,25 +20,24 @@ input {
     }
 }
 
-
-
 .site-form {
     display: block;
     width: 75%;
     align-self: center;
     text-align: center;
     padding: $division-padding;
-}
 
-.site-form input {
-    background-color: transparent;
-    width: 100%;
+    input {
+        background-color: transparent;
+        width: 100%;
+    }
 }
 
 .site-form input,
 .site-form select {
     font-size: 1rem;
     font-size: 1rem;
+
 }
 
 .site-form-content {
@@ -99,24 +68,46 @@ input {
 }
 
 /* Section 2B - Main Content Design */
-.stories {
-    min-height: 5rem;
-    flex: 100%;
+.main-content {
 
-    // display: grid;
-    // grid-template-columns: 1 fr;
+    // display: none;
 
-    a {
-        height: 100%;
-        color: $text-color-story;
+    .stories {
+        min-height: 5rem;
+        flex: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+
+        .newStory {
+            height: 400px;
+            color: $text-color-story;
+            position: relative;
+        }
+
+        .article-title {
+            color: aqua;
+        }
+
+        p {
+            color: red;
+        }
+
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        @include desktop {
+            grid-template-columns: repeat(4, 1fr)
+        }
     }
 }
 
-.newStory {
-    height: 500px;
-    // width: 25%;
-    color: $text-color-story;
-}
+
+
 
 // .article-abstract {}
 
@@ -124,47 +115,44 @@ input {
 
 .site-footer {
     // Cell Alignment and Design
-    margin: 1rem;
+    margin: 0.5rem;
     padding: $division-padding;
-    align-self: center;
+    // align-self: center;
     // vertical-align: bottom;
-    align-items: flex-end;
+    // align-items: flex-end;
     // Text Alignment, Color and Size
     color: $text-color-ft;
     font-size: 1rem;
     text-align: center;
+
+    .copyright {
+        display: flex;
+        flex-flow: column wrap;
+
+        @include tablet {
+            flex-flow: row wrap;
+        }
+
+        @include desktop {
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+    }
 }
 
-// .site-footer  {
-//     margin: 0.5rem;
-
-//     &:hover {
-//         text-transform: uppercase;
-//     }
-// }
 
 .red-footer {
     margin-top: 1.5rem;
+
+    &:hover {
+        text-transform: uppercase;
+    }
+
+    @include tablet {
+        display: none;
+    }
+
+    @include desktop {
+        display: none;
+    }
 }
-
-/* Change at 600px for Tablet Version and 1250px for Full screen */
-/* @media (min-width: 600px) {
-	
-} */
-
-/* @media (min-width: 1250px) {
-	body,
-	button,
-	input {
-	}
-} */
-
-/* @media (min-width: 600px) {
-	.site-footer {
-	}
-} */
-
-/* @media (min-width: 1250px) {
-	.site-footer {
-	}
-} */

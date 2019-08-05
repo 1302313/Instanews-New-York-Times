@@ -1,3 +1,33 @@
+// @media screen and (min-width: 600px) {
+//     .stories {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+// }
+
+@mixin mobile {
+  @media (min-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet-width) {
+        @content;
+    }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+// @mixin breakpoint($width) {
+//   @media (min-width: $width) {
+//     @content;
+//   }
+// }
+
 // @mixin flexed(
 //   $wrap: no-wrap, 
 //   $dir: row,
@@ -13,45 +43,4 @@
 
 // .flexed-container {
 //   @include flexed(wrap, column, flex-start, flex-end);
-// }
-
-
-
-
-
-
-@media screen and (min-width: 600px) {
-    .stories {
-        // grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-// @mixin tablet {
-//   @media (min-width: 600px) {
-// body,
-// button,
-// input {
-// }
-
-//     @content;
-//   }
-// }
-
-// @mixin desktop {
-//   @media (min-width: 1000px) {
-//     @content;
-//   }
-// }
-
-// @mixin breakpoint($width) {
-//   @media (min-width: $width) {
-//     @content;
-//   }
-// }
-
-// li {
-//    flex: 0 1 100%;
-//    @include breakpoint($desktop-width){
-//       flex: 0 1 50%;
-//    }
 // }
