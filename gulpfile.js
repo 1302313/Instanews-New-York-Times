@@ -34,19 +34,6 @@ gulp.task(
 	})
 );
 
-// gulp.task('styles', function() {
-// 	return gulp
-// 		.src('./css/*.css')
-// 		.pipe(
-// 			autoprefixer({
-// 				browsers: ['last 2 versions'],
-// 			})
-// 		)
-// 		.pipe(cssnano())
-// 		.pipe(rename({ extname: '.min.css' }))
-// 		.pipe(gulp.dest('./build/css'));
-// });
-
 gulp.task('sass', function() {
 	return (
 		gulp
@@ -59,7 +46,7 @@ gulp.task('sass', function() {
 					browsers: ['last 2 versions'],
 				})
 			)
-			// Build a .css
+			// Build .css
 			.pipe(gulp.dest('./build/css'))
 			// Minify .css
 			.pipe(cssnano())

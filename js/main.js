@@ -23,7 +23,7 @@ $(function() {
 
 		if (selected !== '') {
 			$mainContent.show();
-			$logo.css({ height: '10vh' });
+			$logo.css({ height: '9vh' });
 
 			// Load Ajax function
 			if (loadAjax(selected) === true) {

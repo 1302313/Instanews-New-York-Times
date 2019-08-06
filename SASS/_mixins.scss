@@ -1,13 +1,7 @@
-// @media screen and (min-width: 600px) {
-//     .stories {
-//         grid-template-columns: repeat(2, 1fr);
-//     }
-// }
-
 @mixin mobile {
-  @media (min-width: $mobile-width) {
-    @content;
-  }
+    @media (min-width: $mobile-width) {
+        @content;
+    }
 }
 
 @mixin tablet {
@@ -17,30 +11,7 @@
 }
 
 @mixin desktop {
-  @media (min-width: $desktop-width) {
-    @content;
-  }
+    @media (min-width: $desktop-width) {
+        @content;
+    }
 }
-
-// @mixin breakpoint($width) {
-//   @media (min-width: $width) {
-//     @content;
-//   }
-// }
-
-// @mixin flexed(
-//   $wrap: no-wrap, 
-//   $dir: row,
-//   $justify: center,
-//   $align: center
-//   ){
-//   display: flex;
-//   flex-wrap: $wrap;
-//   flex-direction: $dir;
-//   justify-content: $justify;
-//   align-items: $align;
-// }
-
-// .flexed-container {
-//   @include flexed(wrap, column, flex-start, flex-end);
-// }

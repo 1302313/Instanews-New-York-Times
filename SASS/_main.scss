@@ -84,7 +84,6 @@
                 margin: 0;
             }
         }
-
     }
 
     @include desktop {
@@ -107,7 +106,6 @@
                     height: 10vh;
                 }
             }
-
         }
 
         .site-form {
@@ -123,7 +121,6 @@
             }
         }
     }
-
 }
 
 /* Section 2A - Loading Bar Design */
@@ -131,22 +128,15 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    // max-height: 50%;
-    // max-width: 10%;
-    // min-height: 30%;
-    // min-width: 5%;
-    // margin: 0 auto;
     padding-bottom: 2rem;
     position: relative;
-}
 
-.loading-gif {
-    width: 15%;
-    height: 15%;
-    display: none;
-    margin: 0 auto;
-    // margin-left: 20vw;
-    // margin-right: 20vw;
+    .loading-gif {
+        width: 15%;
+        height: 15%;
+        display: none;
+        margin: 0 auto;
+    }
 }
 
 /* Section 2B - Main Content Design */
@@ -164,20 +154,44 @@
 
         .newStory {
             height: 400px;
+            font-size: 1rem;
             color: $text-color-story;
-            position: relative;
-        }
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: flex-end;
+            text-align: center;
 
-        .article-title {
-            color: aqua;
-        }
+            .article-title {
+                color: $text-color-story;
+                font-weight: bold;
+                display: block;
+                background: rgba(192, 192, 192, 0.8);
+                padding: $division-padding 0 $division-padding 0;
+                border-radius: 0px 30px 0 0;
+                border-top: 1px solid black;
+                -webkit-text-stroke: 1px black;
+                color: white;
+                text-shadow:
+                    3px 3px 0 #000,
+                    -1px -1px 0 #000,
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+            }
 
-        p {
-            color: red;
+            p {
+                color: $text-color-story;
+                display: block;
+                background: rgba(0, 0, 0, 0.8);
+                padding-bottom: $division-padding - 0.5;
+                padding-top: $division-padding - 0.5;
+                border-radius: 0px 0px 0px 30px;
+                border-bottom: 1px solid black;
+            }
         }
 
         @include tablet {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
         @include desktop {
@@ -186,15 +200,8 @@
     }
 }
 
-
-
-
-// .article-abstract {}
-
 /* Section 3 - Site Footer Design */
-
 .site-footer {
-    // Cell Alignment and Design
     margin: 0.5rem;
     padding: $division-padding;
     color: $text-color-ft;
@@ -213,7 +220,6 @@
         @include desktop {
             flex-flow: row wrap;
         }
-
     }
 
     .red-footer {
@@ -221,6 +227,29 @@
 
         &:hover {
             text-transform: uppercase;
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    .designer {
+        margin-top: 0.5rem;
+
+        &:hover {
+            // -webkit-text-stroke: 1px black;
+            color: white;
+            text-shadow:
+                // 2px 2px rgb(184, 50, 50),
+                -1px -1px 0.5px white,
+                1px -1px 0 #c2c2c2,
+                -1px 1px 0 black,
+                1px 1px 0 black;
         }
 
         @include tablet {
