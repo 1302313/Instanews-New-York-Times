@@ -1,76 +1,157 @@
 /* Default Design */
+
 /* Section 1 - Site Header Design */
 .site-header {
-    // Cell Alignment and Design
     align-content: center;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     height: 100%;
     padding: $division-padding * 2;
-    // align-self: center;
-}
 
-.logo-container {
-    margin: 0 auto;
+    .logo-container {
+        margin: 0 auto;
+        // padding-top: $division-padding - 0.5;
+        transition: transform 0.8s linear;
+        transform-origin: center;
+        transform-style: preserve-3D;
+        transform: scale(1);
 
-    .logo {
-        display: block;
-        min-width: 25%;
+        .logo {
+            display: block;
+            min-width: 25%;
+            margin: 0 auto;
+        }
     }
-}
 
-.site-form {
-    display: block;
-    width: 75%;
-    align-self: center;
-    text-align: center;
-    padding: $division-padding;
+    .site-form {
+        width: 75%;
+        align-self: center;
+        text-align: center;
+        padding: $division-padding;
 
-    input {
-        background-color: transparent;
-        width: 100%;
+        input {
+            background-color: transparent;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .select {
+            font-size: 1rem;
+        }
+
+        .site-form-content {
+            text-align: center;
+            flex-flow: column wrap;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
     }
-}
 
-.site-form input,
-.site-form select {
-    font-size: 1rem;
-    font-size: 1rem;
+    @include tablet {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        height: 11vh;
+        flex-grow: 1;
+        padding: $division-padding - 0.5;
 
-}
+        .logo-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            flex: 45%;
+            width: 20%;
+            transform: scale(1.1);
+            padding-right: $division-padding;
 
-.site-form-content {
-    text-align: center;
-    flex-flow: column wrap;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-top: 1rem;
+            .logo {
+                margin: 0;
+            }
+        }
+
+        .site-form {
+            flex: 45%;
+            align-self: center;
+            height: 9vh;
+
+            .site-form-content {
+                height: 9vh;
+                align-items: flex-start;
+                justify-content: center;
+                margin: 0;
+            }
+        }
+
+    }
+
+    @include desktop {
+        flex-flow: row wrap;
+
+        .logo-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex: 30%;
+            transform: scale(1.2);
+            padding-right: 0;
+
+            .logo {
+                height: 20vh;
+                margin: 0;
+
+                &::after {
+                    height: 10vh;
+                }
+            }
+
+        }
+
+        .site-form {
+            flex: 55%;
+            align-self: center;
+            height: 10vh;
+
+            .site-form-content {
+                height: 10vh;
+                align-items: flex-start;
+                justify-content: center;
+                margin: 0;
+            }
+        }
+    }
+
 }
 
 /* Section 2A - Loading Bar Design */
 .loading {
     display: flex;
     justify-content: center;
+    text-align: center;
     // max-height: 50%;
     // max-width: 10%;
     // min-height: 30%;
     // min-width: 5%;
-    margin: 0 auto;
+    // margin: 0 auto;
     padding-bottom: 2rem;
+    position: relative;
 }
 
 .loading-gif {
     width: 15%;
     height: 15%;
     display: none;
+    margin: 0 auto;
+    // margin-left: 20vw;
+    // margin-right: 20vw;
 }
 
 /* Section 2B - Main Content Design */
 .main-content {
-
-    // display: none;
+    display: none;
 
     .stories {
         min-height: 5rem;
@@ -95,13 +176,12 @@
             color: red;
         }
 
-
         @include tablet {
-            grid-template-columns: repeat(2, 1fr)
+            grid-template-columns: repeat(2, 1fr);
         }
 
         @include desktop {
-            grid-template-columns: repeat(4, 1fr)
+            grid-template-columns: repeat(4, 1fr);
         }
     }
 }
@@ -117,10 +197,6 @@
     // Cell Alignment and Design
     margin: 0.5rem;
     padding: $division-padding;
-    // align-self: center;
-    // vertical-align: bottom;
-    // align-items: flex-end;
-    // Text Alignment, Color and Size
     color: $text-color-ft;
     font-size: 1rem;
     text-align: center;
@@ -131,28 +207,28 @@
 
         @include tablet {
             flex-flow: row wrap;
+            padding-left: 1rem;
         }
 
         @include desktop {
-            grid-template-columns: repeat(4, 1fr)
+            flex-flow: row wrap;
         }
 
     }
-}
 
+    .red-footer {
+        margin-top: 1.5rem;
 
-.red-footer {
-    margin-top: 1.5rem;
+        &:hover {
+            text-transform: uppercase;
+        }
 
-    &:hover {
-        text-transform: uppercase;
-    }
+        @include tablet {
+            display: none;
+        }
 
-    @include tablet {
-        display: none;
-    }
-
-    @include desktop {
-        display: none;
+        @include desktop {
+            display: none;
+        }
     }
 }

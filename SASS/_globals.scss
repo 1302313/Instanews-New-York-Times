@@ -5,6 +5,7 @@ html {
 body {
     color: $text-color-main;
     background-color: $back-color;
+    background-image: radial-gradient(circle, #000, #111, #2d2d2d);
 }
 
 body,

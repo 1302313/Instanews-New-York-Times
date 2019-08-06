@@ -5,25 +5,32 @@ $(function() {
 	const $loadingGif = $('.loading-gif');
 	const $stories = $('.stories');
 	const $select = $('#article-select');
+	const $mainContent = $('.main-content');
+	const $logoContainer = $('.logo-container');
+	const $logo = $('.logo');
 
 	// 'Select' dropdown style
 	$select.prettyDropdown({});
+	$select.refresh();
+
+	//Reset Page
+	$loadingBar.hide();
 
 	// 'Select' Value on Change
-
 	$select.on('change', function(event) {
 		event.preventDefault();
 		const selected = $(this).val();
 
 		if (selected !== '') {
-			console.log('The value you picked is: ' + selected);
+			$mainContent.show();
+			$logo.css({ height: '10vh' });
 
 			// Load Ajax function
 			if (loadAjax(selected) === true) {
 				return selected;
 			}
-			// To show loading bar for 2 seconds
-
+			// Show loading Gif and Bar
+			$loadingBar.show();
 			$loadingGif.show();
 		}
 	});
@@ -49,7 +56,6 @@ $(function() {
 						return value.multimedia[4] !== undefined;
 					})
 					.slice(0, 12);
-				console.log(filteredResults);
 				// For each story, append the following to the DOM
 				$.each(filteredResults, function(index, article) {
 					const articleTemplate = `
@@ -71,12 +77,11 @@ $(function() {
 				//Remove loading Gif and append an Error Message
 				$loadingBar.show();
 				$loadingGif.remove();
-				$('.stories').append(
-					'<h2>You have encountered an error. Please refresh the website and try again.</h2>'
-				);
+				$loadingBar.append('<h2>You have encountered an error. Please refresh the website and try again.</h2>');
 			})
 
 			.always(function() {
+				$loadingBar.hide();
 				$loadingGif.hide();
 			});
 	}
