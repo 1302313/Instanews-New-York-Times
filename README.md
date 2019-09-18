@@ -9,7 +9,7 @@ The following highlights the languages used to markup, design and animate the In
   * Link to CSS design stylesheet
   * Link to JS animation script
   * link to JQuery database
-* CSS:  Cascading Style Sheet
+* CSS: Cascading Style Sheet
   * Flexbox     (For Overall Grid Design)
   * CSS Grid    (For Main Content Section)
   * Fontface    (For Typography and Icon Design)
@@ -19,9 +19,13 @@ The following highlights the languages used to markup, design and animate the In
   * Mixins
   * Variables
   * Selector Inheritance
-* JS:   JavaScript
+* JS: JavaScript
   * JQuery      (For DOM manipulation and traversing)
   * Gulp        (For file minimization, browser synchronization and other tasks)
+* API: Application Program Interface
+  * AJAX:       (Asynchronous Javascript and XML)
+  * XML         (eXtensible Markup Language)
+  * JSON:       (JavaScript Object Notation)
 * GitHub
   * Initialized Git Repository for website
   * Added .ignore file to exclude unnecessary files/folders.
